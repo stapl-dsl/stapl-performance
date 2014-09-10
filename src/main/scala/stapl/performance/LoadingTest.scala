@@ -90,7 +90,6 @@ object LoadingTest extends App {
       println("Invalid policy size given: " + policySize + " Valid policy sizes: " + policySizes)
     } else {
       // then test the artificial policies
-      val parser = new PolicyParser
       test(f"$policySize%d", policyHome + "/large-policy-l1-p" + policySize + "-a20.stapl", "stapl.core.tests.performance.ArtificialAttributes._", testArtificialPolicy, nbWarmups, nbRuns)
     }
   }
