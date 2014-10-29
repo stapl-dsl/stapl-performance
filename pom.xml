@@ -53,6 +53,11 @@
     	<artifactId>stapl-examples</artifactId>
     	<version>0.0.1-SNAPSHOT</version>
     </dependency>
+    <dependency>
+    	<groupId>stapl</groupId>
+    	<artifactId>stapl-parser</artifactId>
+    	<version>0.0.1-SNAPSHOT</version>
+    </dependency>
   </dependencies>
 
   <build>

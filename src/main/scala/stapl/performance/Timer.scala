@@ -22,7 +22,11 @@ class Timer {
   
   def count = timings.size
   
-  def mean = grizzled.math.stats.mean(timings: _*)
+  def mean = timings.length match {
+    case 0 => -1
+    case 1 => timings.head
+    case _ => grizzled.math.stats.mean(timings: _*)
+  }
   
   def stdDev = grizzled.math.stats.sampleStdDev(timings: _*)
   
