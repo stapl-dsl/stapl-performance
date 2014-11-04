@@ -6,12 +6,11 @@ import stapl.core.Deny
 import stapl.core.NotApplicable
 import stapl.core.boolean2Value
 import stapl.core.dateTime2Value
-import stapl.core.parser.PolicyParser
 import stapl.core.pdp.AttributeFinder
 import stapl.core.pdp.PDP
 import stapl.core.string2Value
 import stapl.core.stringSeq2Value
-import stapl.parser.StaplParser
+import stapl.parser.PolicyParser
 import scala.util.Success
 
 object ExtLoadingTest extends App {
@@ -130,7 +129,7 @@ object ExtLoadingTest extends App {
   def parseEdocs(policyString: String): AbstractPolicy = {
     import EdocsAttributes._
     
-    val parser = new StaplParser(policyString, subject, action, resource, env)
+    val parser = new PolicyParser(policyString, subject, action, resource, env)
     val Success(result) = parser.Stapl.run()
     result
   }
@@ -138,7 +137,7 @@ object ExtLoadingTest extends App {
   def parseEhealth(policyString: String): AbstractPolicy = {
     import EhealthAttributes._
     
-    val parser = new StaplParser(policyString, subject, action, resource, env)
+    val parser = new PolicyParser(policyString, subject, action, resource, env)
     val Success(result) = parser.Stapl.run()
     result
   }
